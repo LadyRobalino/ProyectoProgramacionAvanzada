@@ -1,0 +1,1217 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%md\n![Diagrama](https://i.imgur.com/w8LvDpr.png)\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T00:02:26+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p><img src=\"https://i.imgur.com/w8LvDpr.png\" alt=\"Diagrama\" /></p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753400732809_2077387937",
+      "id": "paragraph_1753400732809_2077387937",
+      "dateCreated": "2025-07-24T23:45:32+0000",
+      "dateStarted": "2025-07-25T00:02:26+0000",
+      "dateFinished": "2025-07-25T00:02:29+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:700"
+    },
+    {
+      "text": "%md\n<b style=\"color: purple;\">**Estableciendo conexión con la base de datos**</b>\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T03:40:46+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p><b style=\"color: purple;\"><strong>Estableciendo conexión con la base de datos</strong></b></p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753402508757_1752892913",
+      "id": "paragraph_1753402508757_1752892913",
+      "dateCreated": "2025-07-25T00:15:08+0000",
+      "dateStarted": "2025-07-25T00:16:26+0000",
+      "dateFinished": "2025-07-25T00:16:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:701"
+    },
+    {
+      "text": "\n%spark\nval url = \"jdbc:mysql://localhost:3306/dataProyecto\"\nval table = \"(SELECT * FROM MatrimonioFinal) AS tmp\"\n\nval properties = new java.util.Properties()\nproperties.setProperty(\"user\", \"root\")\nproperties.setProperty(\"password\", \"Sirio1203\")\nproperties.setProperty(\"driver\", \"com.mysql.cj.jdbc.Driver\")\n\nval df = spark.read.jdbc(url, table, properties)\n\n// Muestra los primeros registros para verificar la conexión\ndf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T03:44:56+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+----------+---------+---------------+-----------+-----------+\n|id_matrimonio|fecha_insc|hijos_rec|       mcap_bie|persona1_id|persona2_id|\n+-------------+----------+---------+---------------+-----------+-----------+\n|            2|2024-02-01|        2|             No|          1|      65536|\n|            3|2024-01-26|     null|             No|          2|      65537|\n|            4|2024-02-06|        0|             No|          3|      65538|\n|            5|2024-02-09|        0|             No|          4|      65539|\n|            6|2024-01-31|        0|             No|          5|      65540|\n|            7|2024-01-23|        1|             No|          6|      65541|\n|            8|2024-02-16|        2|             No|          7|      65542|\n|            9|2024-02-19|        0|             No|          8|      65543|\n|           10|2024-01-29|     null|Sin información|          9|      65544|\n|           11|2024-02-19|        0|             No|         10|      65545|\n|           12|2024-01-26|     null|Sin información|         11|      65546|\n|           13|2024-01-16|        1|             No|         12|      65547|\n|           14|2024-02-02|        0|             No|         13|      65548|\n|           15|2024-02-19|        0|             No|         14|      65549|\n|           16|2024-01-16|        2|             No|         15|      65550|\n|           17|2024-02-19|        0|             No|         16|      65551|\n|           18|2024-01-02|        0|             No|         17|      65552|\n|           19|2024-01-02|        2|             No|         18|      65553|\n|           20|2024-01-02|        2|             No|         19|      65554|\n|           21|2024-01-03|        0|             No|         20|      65555|\n+-------------+----------+---------+---------------+-----------+-----------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34murl\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = jdbc:mysql://localhost:3306/dataProyecto\n\u001b[1m\u001b[34mtable\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = (SELECT * FROM MatrimonioFinal) AS tmp\n\u001b[1m\u001b[34mproperties\u001b[0m: \u001b[1m\u001b[32mjava.util.Properties\u001b[0m = {user=root, password=Sirio1203, driver=com.mysql.cj.jdbc.Driver}\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id_matrimonio: int, fecha_insc: date ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=3",
+              "$$hashKey": "object:1561"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753407827593_167809042",
+      "id": "paragraph_1753407827593_167809042",
+      "dateCreated": "2025-07-25T01:43:47+0000",
+      "dateStarted": "2025-07-25T03:44:56+0000",
+      "dateFinished": "2025-07-25T03:44:57+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:702"
+    },
+    {
+      "text": "%spark\n// Configuración de conexión MySQL\nval url = \"jdbc:mysql://localhost:3306/dataProyecto\"\nval table = \"(SELECT * FROM MatrimonioVistaCompleta) AS tmp\"\n\nval properties = new java.util.Properties()\nproperties.setProperty(\"user\", \"root\")\nproperties.setProperty(\"password\", \"Sirio1203\")\nproperties.setProperty(\"driver\", \"com.mysql.cj.jdbc.Driver\")\n\n// Crear DataFrame desde MySQL\nval dfMatrimonioVista = spark.read.jdbc(url, table, properties)\n\n// Mostrar resultados\ndfMatrimonioVista.show()\n\n// Registrar vista para usar en %sql\ndfMatrimonioVista.createOrReplaceTempView(\"MatrimonioVistaCompleta\")",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T03:49:06+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+----------+---------+---------------+-----------+-----+----------+-----+-------------+-------------+--------+----------+------------+-----------+-----+----------+-----+-------------+-------------+--------+----------+------------+---------+------+---------+----+-----------+\n|id_matrimonio|fecha_insc|hijos_rec|       mcap_bie|persona1_id|sexo1|fecha_nac1|edad1|nacionalidad1|estado_civil1|  etnia1|sabe_leer1|       tipo1|persona2_id|sexo2|fecha_nac2|edad2|nacionalidad2|estado_civil2|  etnia2|sabe_leer2|       tipo2|provincia|canton|parroquia|area|nombre_pais|\n+-------------+----------+---------+---------------+-----------+-----+----------+-----+-------------+-------------+--------+----------+------------+-----------+-----+----------+-----+-------------+-------------+--------+----------+------------+---------+------+---------+----+-----------+\n|            2|2024-02-01|        2|             No|          1|    M|1986-02-13|   37|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65536|    M|1989-12-14|   34|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|            3|2024-01-26|     null|             No|          2|    M|1989-07-01|   34|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65537|    M|1993-11-12|   30|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|            4|2024-02-06|        0|             No|          3|    M|2005-02-24|   18|      Ecuador|      Soltero|Indígena|      true|CONTRAYENTE1|      65538|    M|1991-09-03|   32|      Ecuador|      Soltero|Indígena|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|            5|2024-02-09|        0|             No|          4|    M|1995-06-29|   28|      Ecuador|      Soltero|  Blanco|      true|CONTRAYENTE1|      65539|    M|2004-03-24|   19|      Ecuador|      Soltero|  Blanco|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|            6|2024-01-31|        0|             No|          5|    M|1994-11-14|   29|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65540|    M|1999-07-27|   24|      Ecuador|      Soltero|Indígena|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|            7|2024-01-23|        1|             No|          6|    M|1993-06-11|   30|      Ecuador|   Divorciado| Mestizo|      true|CONTRAYENTE1|      65541|    M|1995-12-18|   28|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|            8|2024-02-16|        2|             No|          7|    M|2001-04-12|   22|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65542|    M|1999-05-10|   24|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|            9|2024-02-19|        0|             No|          8|    M|1985-05-08|   38|      Ecuador|   Divorciado|  Blanco|      true|CONTRAYENTE1|      65543|    M|1985-03-28|   38|      Ecuador|   Divorciado|  Blanco|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           10|2024-01-29|     null|Sin información|          9|    M|1958-03-31|   65|      Ecuador|        Viudo| Mestizo|      true|CONTRAYENTE1|      65544|    M|1965-01-08|   59|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           11|2024-02-19|        0|             No|         10|    M|1994-02-18|   30|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65545|    M|1998-05-06|   25|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           12|2024-01-26|     null|Sin información|         11|    M|1979-03-09|   44|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65546|    M|1985-05-20|   38|      Ecuador|   Divorciado| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           13|2024-01-16|        1|             No|         12|    M|2001-03-18|   22|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65547|    M|2002-05-05|   21|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           14|2024-02-02|        0|             No|         13|    M|1996-12-02|   27|      Ecuador|      Soltero|Indígena|      true|CONTRAYENTE1|      65548|    M|1996-08-15|   27|      Ecuador|      Soltero|Indígena|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           15|2024-02-19|        0|             No|         14|    M|1999-10-05|   24|      Ecuador|      Soltero|  Blanco|      true|CONTRAYENTE1|      65549|    M|2001-08-16|   22|      Ecuador|      Soltero|  Blanco|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           16|2024-01-16|        2|             No|         15|    M|1985-02-12|   38|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65550|    M|1986-11-10|   37|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           17|2024-02-19|        0|             No|         16|    M|1955-07-07|   68|      Ecuador|   Divorciado| Mestizo|      true|CONTRAYENTE1|      65551|    M|1962-10-23|   61|      Ecuador|   Divorciado| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           18|2024-01-02|        0|             No|         17|    M|1969-09-01|   54|      Ecuador|      Soltero| Mestizo|     false|CONTRAYENTE1|      65552|    M|1974-08-02|   49|      Ecuador|      Soltero| Mestizo|     false|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           19|2024-01-02|        2|             No|         18|    M|1985-04-15|   38|      Ecuador|   Divorciado| Mestizo|      true|CONTRAYENTE1|      65553|    M|1989-01-30|   34|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           20|2024-01-02|        2|             No|         19|    M|1994-11-01|   29|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65554|    M|1995-09-06|   28|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n|           21|2024-01-03|        0|             No|         20|    M|2001-04-23|   22|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE1|      65555|    M|2003-10-21|   20|      Ecuador|      Soltero| Mestizo|      true|CONTRAYENTE2|     null|  null|     null|null|       null|\n+-------------+----------+---------+---------------+-----------+-----+----------+-----+-------------+-------------+--------+----------+------------+-----------+-----+----------+-----+-------------+-------------+--------+----------+------------+---------+------+---------+----+-----------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34murl\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = jdbc:mysql://localhost:3306/dataProyecto\n\u001b[1m\u001b[34mtable\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = (SELECT * FROM MatrimonioVistaCompleta) AS tmp\n\u001b[1m\u001b[34mproperties\u001b[0m: \u001b[1m\u001b[32mjava.util.Properties\u001b[0m = {user=root, password=Sirio1203, driver=com.mysql.cj.jdbc.Driver}\n\u001b[1m\u001b[34mdfMatrimonioVista\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id_matrimonio: int, fecha_insc: date ... 25 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=4",
+              "$$hashKey": "object:1790"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753402582269_604885052",
+      "id": "paragraph_1753402582269_604885052",
+      "dateCreated": "2025-07-25T00:16:22+0000",
+      "dateStarted": "2025-07-25T03:49:06+0000",
+      "dateFinished": "2025-07-25T03:49:08+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:703"
+    },
+    {
+      "text": "\n\n// 1. Parámetros de conexión\nval jdbcUrl = \"jdbc:mysql://localhost:3306/dataProyecto\" \nval connectionProperties = new java.util.Properties()\nconnectionProperties.setProperty(\"user\", \"root\")         \nconnectionProperties.setProperty(\"password\", \"Sirio1203\")      \n\n// 2. Carga la tabla Persona\nval dfPersona = spark.read\n  .jdbc(jdbcUrl, \"Persona\", connectionProperties)\n\n// 3. Carga la tabla UbicacionResidencia\nval dfUbicacion = spark.read\n  .jdbc(jdbcUrl, \"UbicacionResidencia\", connectionProperties)\n\nval dfIndicadores = spark.read\n  .jdbc(jdbcUrl, \"indicadores_provincia\", connectionProperties)\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T06:05:46+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753422709106_1258829010",
+      "id": "paragraph_1753422709106_1258829010",
+      "dateCreated": "2025-07-25T05:51:49+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:14938",
+      "dateFinished": "2025-07-25T06:05:46+0000",
+      "dateStarted": "2025-07-25T06:05:46+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mjdbcUrl\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = jdbc:mysql://localhost:3306/dataProyecto\n\u001b[1m\u001b[34mconnectionProperties\u001b[0m: \u001b[1m\u001b[32mjava.util.Properties\u001b[0m = {user=root, password=Sirio1203}\n\u001b[1m\u001b[34mdfPersona\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id_persona: int, sexo: string ... 15 more fields]\n\u001b[1m\u001b[34mdfUbicacion\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id: int, provincia: string ... 3 more fields]\n\u001b[1m\u001b[34mdfIndicadores\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [provincia: string, pobreza_ingresos: double ... 2 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753423317849_1816021458",
+      "id": "paragraph_1753423317849_1816021458",
+      "dateCreated": "2025-07-25T06:01:57+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:16396",
+      "text": "dfUbicacion.printSchema()",
+      "dateUpdated": "2025-07-25T06:02:11+0000",
+      "dateFinished": "2025-07-25T06:02:11+0000",
+      "dateStarted": "2025-07-25T06:02:11+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- id: integer (nullable = true)\n |-- provincia: string (nullable = true)\n |-- canton: string (nullable = true)\n |-- parroquia: string (nullable = true)\n |-- area: string (nullable = true)\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n<b style=\"color: purple;\">**Consulta 1. Matrimonios durante meses específicos (Tendencias de temporada)**</b>",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T04:39:21+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p><b style=\"color: purple;\"><strong>Consulta 1. Matrimonios durante meses específicos (Tendencias de temporada)</strong></b></p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753404443121_231765082",
+      "id": "paragraph_1753404443121_231765082",
+      "dateCreated": "2025-07-25T00:47:23+0000",
+      "dateStarted": "2025-07-25T04:39:15+0000",
+      "dateFinished": "2025-07-25T04:39:15+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:704"
+    },
+    {
+      "text": "%spark\nimport org.apache.spark.sql.functions._\n\nval MatrimonioPorMes = dfMatrimonioVista\n  .groupBy(month(col(\"fecha_insc\")).alias(\"mes\"))\n  .agg(count(\"*\").alias(\"total_matrimonios\"))\n  .withColumn(\"nombre_mes\", \n    when(col(\"mes\") === 1, \"Enero\")\n    .when(col(\"mes\") === 2, \"Febrero\")\n    .when(col(\"mes\") === 3, \"Marzo\")\n    .when(col(\"mes\") === 4, \"Abril\")\n    .when(col(\"mes\") === 5, \"Mayo\")\n    .when(col(\"mes\") === 6, \"Junio\")\n    .when(col(\"mes\") === 7, \"Julio\")\n    .when(col(\"mes\") === 8, \"Agosto\")\n    .when(col(\"mes\") === 9, \"Septiembre\")\n    .when(col(\"mes\") === 10, \"Octubre\")\n    .when(col(\"mes\") === 11, \"Noviembre\")\n    .when(col(\"mes\") === 12, \"Diciembre\")\n    .otherwise(\"Desconocido\"))\n  .orderBy(desc(\"total_matrimonios\"))\n\nz.show(MatrimonioPorMes.select(\"nombre_mes\", \"total_matrimonios\"))\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T07:40:07+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 406.6,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "nombre_mes": "string",
+                      "total_matrimonios": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "nombre_mes",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "total_matrimonios",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "nombre_mes\ttotal_matrimonios\nDiciembre\t5636\nAgosto\t4836\nMarzo\t4591\nNoviembre\t4578\nFebrero\t4528\nMayo\t4493\nOctubre\t4465\nAbril\t4387\nJulio\t4302\nSeptiembre\t4203\nJunio\t4013\nEnero\t3781\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mMatrimonioPorMes\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [mes: int, total_matrimonios: bigint ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=23",
+              "$$hashKey": "object:23661"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=24",
+              "$$hashKey": "object:23662"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753403482870_672850576",
+      "id": "paragraph_1753403482870_672850576",
+      "dateCreated": "2025-07-25T00:31:22+0000",
+      "dateStarted": "2025-07-25T04:36:21+0000",
+      "dateFinished": "2025-07-25T04:36:22+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:705"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753404487330_158492363",
+      "id": "paragraph_1753404487330_158492363",
+      "dateCreated": "2025-07-25T00:48:07+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:706",
+      "text": "%md\n<b style=\"color: purple;\">**Consulta 2: Matrimonios por etnia (etnia1, etnia2)**</b>",
+      "dateUpdated": "2025-07-25T07:41:46+0000",
+      "dateFinished": "2025-07-25T04:48:18+0000",
+      "dateStarted": "2025-07-25T04:48:18+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p><b style=\"color: purple;\"><strong>Consulta 2: Matrimonios por etnia (etnia1, etnia2)</strong></b></p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\nval etnia1 = dfMatrimonioVista\n  .select(col(\"etnia1\").alias(\"etnia\"))\n  .filter(col(\"etnia\").isNotNull)\n\nval etnia2 = dfMatrimonioVista\n  .select(col(\"etnia2\").alias(\"etnia\"))\n  .filter(col(\"etnia\").isNotNull)\n\nval matrimoniosPorEtnia = etnia1.union(etnia2)\n  .groupBy(\"etnia\")\n  .count()\n  .orderBy(desc(\"count\"))\n\nz.show(matrimoniosPorEtnia)\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T07:46:45+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 316.6,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "etnia": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "etnia",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=25",
+              "$$hashKey": "object:24103"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=26",
+              "$$hashKey": "object:24104"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753418405567_2119737530",
+      "id": "paragraph_1753418405567_2119737530",
+      "dateCreated": "2025-07-25T04:40:05+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:8568",
+      "dateFinished": "2025-07-25T04:48:34+0000",
+      "dateStarted": "2025-07-25T04:48:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "etnia\tcount\nMestizo\t93344\nIndígena\t5693\nMontubio\t3441\nSin información\t1888\nBlanco\t1527\nAfroecuatoriano/afrodescendiente\t723\nMulato\t549\nNegro\t329\nOtro\t132\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34metnia1\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [etnia: string]\n\u001b[1m\u001b[34metnia2\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [etnia: string]\n\u001b[1m\u001b[34mmatrimoniosPorEtnia\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [etnia: string, count: bigint]\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n<b style=\"color: purple;\">**Consulta 3: Matrimonios por provincia (provincia)**</b>\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T07:46:49+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753418963169_164529136",
+      "id": "paragraph_1753418963169_164529136",
+      "dateCreated": "2025-07-25T04:49:23+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:9704",
+      "dateFinished": "2025-07-25T04:49:58+0000",
+      "dateStarted": "2025-07-25T04:49:58+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p><b style=\"color: purple;\"><strong>Consulta 3: Matrimonios por provincia (provincia)</strong></b></p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "\n%spark\nimport org.apache.spark.sql.functions._\n\n\nval NacionalidadMatrimonio = dfMatrimonioVista\n  .withColumn(\"nationality_match\", \n    when(col(\"nacionalidad1\") === col(\"nacionalidad2\"), \"Misma Nacionalidad\")\n    .otherwise(\"Diferente Nacionalidad\"))\n  .groupBy(\"nationality_match\")\n  .agg(count(\"*\").alias(\"total_matrimonios\"))\n  .orderBy(desc(\"total_matrimonios\"))\n\nNacionalidadMatrimonio.show()\nz.show(NacionalidadMatrimonio)",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T07:48:46+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "nationality_match": "string",
+                      "total_matrimonios": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "nationality_match",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "total_matrimonios",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=41",
+              "$$hashKey": "object:24201"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=42",
+              "$$hashKey": "object:24202"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=43",
+              "$$hashKey": "object:24203"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=44",
+              "$$hashKey": "object:24204"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753419923362_1712915836",
+      "id": "paragraph_1753419923362_1712915836",
+      "dateCreated": "2025-07-25T05:05:23+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12860",
+      "dateFinished": "2025-07-25T05:08:07+0000",
+      "dateStarted": "2025-07-25T05:08:05+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+-----------------+\n|   nationality_match|total_matrimonios|\n+--------------------+-----------------+\n|  Misma Nacionalidad|            51944|\n|Diferente Naciona...|             1869|\n+--------------------+-----------------+\n\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "nationality_match\ttotal_matrimonios\nMisma Nacionalidad\t51944\nDiferente Nacionalidad\t1869\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mNacionalidadMatrimonio\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [nationality_match: string, total_matrimonios: bigint]\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n<b style=\"color: purple;\">**Consulta 4: Top 10 provincias con más matrimonios**</b>\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T07:49:16+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753419936282_1148307070",
+      "id": "paragraph_1753419936282_1148307070",
+      "dateCreated": "2025-07-25T05:05:36+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12938",
+      "dateFinished": "2025-07-25T06:03:39+0000",
+      "dateStarted": "2025-07-25T06:03:39+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p><b style=\"color: purple;\"><strong>Consulta 4: Top 10 provincias con más matrimonios</strong></b></p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\nval dfProvinciasTop = dfUbicacion\n  .groupBy(\"provincia\")\n  .agg(count(\"*\").alias(\"total_matrimonios\"))\n  .orderBy(desc(\"total_matrimonios\"))\n  .limit(10)\n\nz.show(dfProvinciasTop)\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T08:02:31+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 347.667,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "provincia": "string",
+                      "total_matrimonios": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "provincia",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "total_matrimonios",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "provincia": "string",
+                      "prom_edad_persona1": "string",
+                      "prom_edad_persona2": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "provincia",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "prom_edad_persona1",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=56",
+              "$$hashKey": "object:24394"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=57",
+              "$$hashKey": "object:24395"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753420300411_1689582928",
+      "id": "paragraph_1753420300411_1689582928",
+      "dateCreated": "2025-07-25T05:11:40+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:13773",
+      "dateFinished": "2025-07-25T06:02:38+0000",
+      "dateStarted": "2025-07-25T06:02:37+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "provincia\ttotal_matrimonios\nManabí\t96\nPichincha\t95\nLoja\t92\nAzuay\t85\nGuayas\t81\nEl Oro\t81\nTungurahua\t61\nChimborazo\t57\nEsmeraldas\t53\nLos Ríos\t48\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfProvinciasTop\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [provincia: string, total_matrimonios: bigint]\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n<b style=\"color: purple;\">**Consulta 5: Relación entre pobreza (NBI) e IDH por provincia**</b>\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T07:31:27+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753428443578_1452069016",
+      "id": "paragraph_1753428443578_1452069016",
+      "dateCreated": "2025-07-25T07:27:23+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:23211",
+      "dateFinished": "2025-07-25T07:31:27+0000",
+      "dateStarted": "2025-07-25T07:31:27+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p><b style=\"color: purple;\"><strong>Consulta 5: Relación entre pobreza (NBI) e IDH por provincia</strong></b></p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\n\nval dfCruce = dfMatrimonioVista\n  .select(\"provincia\")\n  .distinct()\n  .join(dfIndicadores, Seq(\"provincia\"))\n\nz.show(dfCruce.select(\"provincia\", \"pobreza_nbi\", \"idh\").orderBy(desc(\"pobreza_nbi\")))\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-25T08:08:03+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 459.8,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "provincia": "string",
+                      "pobreza_nbi": "string",
+                      "idh": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "provincia",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "pobreza_nbi",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=111",
+              "$$hashKey": "object:24899"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=112",
+              "$$hashKey": "object:24900"
+            },
+            {
+              "jobUrl": "http://10.0.2.15:4040/jobs/job?id=114",
+              "$$hashKey": "object:24901"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753420311183_1872490430",
+      "id": "paragraph_1753420311183_1872490430",
+      "dateCreated": "2025-07-25T05:11:51+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:13854",
+      "dateFinished": "2025-07-25T07:26:43+0000",
+      "dateStarted": "2025-07-25T07:26:41+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "provincia\tpobreza_nbi\tidh\nEsmeraldas\t52.1\t0.7\nPastaza\t51.3\t0.705\nNapo\t49.9\t0.71\nChimborazo\t47.6\t0.715\nOrellana\t44.8\t0.725\nCotopaxi\t43.3\t0.721\nCarchi\t30.4\t0.755\nImbabura\t27.2\t0.765\nTungurahua\t25.3\t0.773\nLoja\t22.7\t0.747\nAzuay\t22.4\t0.791\nGuayas\t20.1\t0.788\nPichincha\t17.6\t0.841\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfCruce\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [provincia: string, pobreza_ingresos: double ... 2 more fields]\n"
+          }
+        ]
+      }
+    }
+  ],
+  "name": "Proyecto_Integrador",
+  "id": "2KZQ7KTKW",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Proyecto_Integrador"
+}
